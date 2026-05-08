@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PromptGPT Legal Center</title>
+  <meta name="description" content="PromptGPT privacy policy and user agreement in Chinese and English.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8f7;
+      --panel: #ffffff;
+      --text: #18201d;
+      --muted: #5d6b66;
+      --line: #dce5e1;
+      --accent: #0f8f74;
+      --accent-dark: #08705a;
+      --accent-weak: #e4f5ef;
+      --table: #f0f6f4;
+      --shadow: 0 20px 60px rgba(21, 49, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "HarmonyOS Sans SC", "Segoe UI", sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      z-index: 20;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: var(--text);
+      color: #ffffff;
+      transition: top 140ms ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 248, 247, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar,
+    main,
+    footer {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      min-width: 0;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .lang-switch {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      flex: 0 0 auto;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .lang-switch button {
+      min-width: 68px;
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      line-height: 1.2;
+    }
+
+    .lang-switch button[aria-pressed="true"] {
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 42px 0 64px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 24px;
+      padding: 32px 0 28px;
+    }
+
+    h1 {
+      max-width: 840px;
+      margin: 0;
+      font-size: clamp(32px, 6vw, 58px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .quick-links a,
+    .mail-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .quick-links a:hover,
+    .mail-link:hover {
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0 36px;
+    }
+
+    .meta-card {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .meta-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .doc {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .doc + .doc {
+      margin-top: 28px;
+    }
+
+    .doc h2 {
+      margin: 0 0 16px;
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .doc h3 {
+      margin: 34px 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .doc p {
+      margin: 10px 0;
+    }
+
+    .doc ul {
+      margin: 12px 0;
+      padding-left: 22px;
+    }
+
+    .doc li + li {
+      margin-top: 8px;
+    }
+
+    code {
+      padding: 1px 4px;
+      border-radius: 4px;
+      background: #edf4f1;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th {
+      background: var(--table);
+      color: #243832;
+      font-weight: 700;
+    }
+
+    .notice {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--accent-weak);
+      color: #275b50;
+      font-size: 14px;
+    }
+
+    .lang-panel[hidden] {
+      display: none;
+    }
+
+    footer {
+      padding: 0 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .lang-switch {
+        width: 100%;
+      }
+
+      .lang-switch button {
+        min-width: 0;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .hero {
+        padding-top: 18px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .doc {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#privacy">Skip to content</a>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <strong>PromptGPT / GPT提示词助手</strong>
+        <span data-i18n="tagline">隐私政策与用户协议</span>
+      </div>
+      <div class="lang-switch" aria-label="Language switch">
+        <button type="button" data-lang-button="zh" aria-pressed="true">中文</button>
+        <button type="button" data-lang-button="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="lang-panel" data-lang-panel="zh">
+      <section class="hero" aria-labelledby="hero-title-zh">
+        <h1 id="hero-title-zh">GPT提示词助手协议中心</h1>
+        <p class="lead">这里用于托管《GPT提示词助手》的隐私政策和用户协议，供应用内入口、应用市场审核和用户查阅。</p>
+        <div class="quick-links" aria-label="页面导航">
+          <a href="#privacy">隐私政策</a>
+          <a href="#terms">用户协议</a>
+          <a class="mail-link" href="mailto:tomkuku588@gmail.com">联系邮箱：tomkuku588@gmail.com</a>
+        </div>
+      </section>
+
+      <section class="meta-grid" aria-label="基本信息">
+        <div class="meta-card">
+          <span>应用名称</span>
+          <strong>GPT提示词助手</strong>
+        </div>
+        <div class="meta-card">
+          <span>版本号</span>
+          <strong>1.0.0</strong>
+        </div>
+        <div class="meta-card">
+          <span>生效日期</span>
+          <strong>2026-05-08</strong>
+        </div>
+      </section>
+
+      <article class="doc" id="privacy" data-section="privacy">
+        <h2>《GPT提示词助手》隐私政策</h2>
+        <p class="notice">如需联系开发者处理隐私或协议相关问题，请发送邮件至 <a href="mailto:tomkuku588@gmail.com">tomkuku588@gmail.com</a>。</p>
+
+        <h3>适用范围</h3>
+        <p>本政策适用于《GPT提示词助手》在 HarmonyOS 设备上提供的 Prompt 模板管理、本地规则优化、评分参考、历史记录、收藏、工作流、一键复制和本地备份能力。</p>
+        <p>本应用以本地使用为主，不要求注册或登录账号，不主动上传用户输入的 Prompt、模板、分类、收藏、历史记录、工作流、草稿或设置。若后续版本新增账号、联网同步、统计分析、第三方 SDK、在线模型能力或新的系统授权场景，应在功能上线前更新本政策，并在应用内向用户说明。</p>
+
+        <h3>我们处理的信息</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>信息类型</th>
+                <th>是否处理</th>
+                <th>使用目的</th>
+                <th>存储位置</th>
+                <th>保留时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>账号信息</td>
+                <td>否</td>
+                <td>当前版本不提供账号体系</td>
+                <td>不适用</td>
+                <td>不适用</td>
+              </tr>
+              <tr>
+                <td>设备标识和统计信息</td>
+                <td>否</td>
+                <td>当前版本不采集设备标识、广告标识或埋点统计数据</td>
+                <td>不适用</td>
+                <td>不适用</td>
+              </tr>
+              <tr>
+                <td>Prompt 与模板内容</td>
+                <td>是</td>
+                <td>创建、编辑、优化、评分、保存和复用 Prompt</td>
+                <td>用户设备本地存储</td>
+                <td>用户主动删除、清理应用数据或卸载应用前保留</td>
+              </tr>
+              <tr>
+                <td>分类、收藏和工作流</td>
+                <td>是</td>
+                <td>支持内容组织、搜索、收藏和多步骤复用</td>
+                <td>用户设备本地存储</td>
+                <td>用户主动删除、清理应用数据或卸载应用前保留</td>
+              </tr>
+              <tr>
+                <td>历史记录和草稿</td>
+                <td>是</td>
+                <td>支持继续编辑、查看过往结果和再次复制</td>
+                <td>用户设备本地存储</td>
+                <td>用户主动清理、清理应用数据或卸载应用前保留</td>
+              </tr>
+              <tr>
+                <td>模板变量填写内容</td>
+                <td>视使用情况处理</td>
+                <td>替换模板占位内容；保存草稿或生成历史后作为 Prompt 文本的一部分留存</td>
+                <td>当前编辑会话或用户设备本地存储</td>
+                <td>未保存时仅当前会话有效；保存后按本地业务数据保留</td>
+              </tr>
+              <tr>
+                <td>备份文件内容</td>
+                <td>用户主动触发时处理</td>
+                <td>导出或合并导入本地 JSON 备份</td>
+                <td>用户选择的文件位置或应用本地存储</td>
+                <td>由用户自行管理备份文件</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>系统能力和权限说明</h3>
+        <p>本应用的核心功能在设备本地完成。当前版本不涉及账号登录、联网同步、定位、通讯录、相机、麦克风、日历、短信、通话记录等能力。</p>
+        <p>应用会在你点击“一键复制”时调用系统剪贴板能力，将你主动选择的 Prompt 内容写入设备剪贴板，便于粘贴到其他应用。应用不会读取其他应用写入的剪贴板内容，也不会上传剪贴板内容。</p>
+        <p>应用会在你主动导出或导入备份时调用系统文件选择或保存能力。导出的 JSON 备份文件只保存到你选择的位置；导入时，应用只读取你主动选择的备份文件，并将其中可识别的数据合并到当前本地数据中。</p>
+
+        <h3>数据存储、导出、导入和删除</h3>
+        <ul>
+          <li>本地存储：Prompt、模板、分类、收藏、历史记录、工作流、评分摘要、草稿和设置保存在当前设备本地。</li>
+          <li>数据导出：你可以在设置页主动导出 JSON 备份文件，导出内容包括自建模板、分类、历史记录、工作流、内置模板收藏状态和必要设置。</li>
+          <li>数据导入：你可以在设置页主动选择备份文件并合并导入。导入会尽量保留现有数据，并对重复或冲突内容进行跳过、合并或重命名处理。</li>
+          <li>数据删除：你可以在应用内清理历史记录，或在模板、分类、工作流等对应页面管理自建内容。你也可以通过系统设置清理应用数据或卸载应用来删除本地数据。</li>
+        </ul>
+
+        <h3>用户权利</h3>
+        <p>你可以在应用内查看、复制、编辑、导出或删除本地保存的内容。由于当前版本以本地存储为主，相关操作需要在你的设备上完成。</p>
+
+        <h3>第三方服务和信息共享</h3>
+        <p>当前版本不集成第三方 SDK，不提供账号登录、广告投放、统计分析或云同步服务，也不会主动向第三方共享用户输入的 Prompt、模板、历史记录或备份内容。</p>
+        <p>当你将 Prompt 复制到其他应用或平台后，相关内容会受到对应第三方应用或平台的服务条款和隐私政策约束，请在使用前自行了解并判断。</p>
+
+        <h3>未成年人保护</h3>
+        <p>本应用主要面向具备独立内容创作、学习或工作需求的用户。未成年人使用本应用时，应在监护人指导下理解 Prompt 内容、第三方平台规则和个人信息保护要求，避免输入或传播违法违规、侵权、敏感或不适合公开分享的内容。</p>
+
+        <h3>政策更新</h3>
+        <p>如本政策发生更新，我们会通过应用内入口、版本说明或应用市场页面展示更新内容。若更新涉及个人信息处理方式的重大变化，应在相关功能启用前进行说明。</p>
+      </article>
+
+      <article class="doc" id="terms" data-section="terms">
+        <h2>《GPT提示词助手》用户协议</h2>
+        <p class="notice">如需联系开发者处理服务或协议相关问题，请发送邮件至 <a href="mailto:tomkuku588@gmail.com">tomkuku588@gmail.com</a>。</p>
+
+        <h3>服务内容</h3>
+        <p>《GPT提示词助手》面向内容创作者、运营人员、产品人员、开发人员和其他需要整理 Prompt 的用户，提供 Prompt 模板管理、本地规则优化、评分参考、历史记录、收藏、搜索、工作流、一键复制和本地备份能力。</p>
+        <p>你可以使用的主要功能包括：</p>
+        <ul>
+          <li>浏览和套用内置中文 Prompt 模板。</li>
+          <li>填写模板变量，快速替换 <code>【主题】</code>、<code>【目标人群】</code> 等占位内容。</li>
+          <li>新建、编辑、分类、搜索和收藏 Prompt。</li>
+          <li>使用本地规则优化 Prompt，并查看评分与改进建议。</li>
+          <li>保存历史记录，并将选定内容复制到其他应用或 AI 工具中使用。</li>
+          <li>创建和复用多步骤 Prompt 工作流。</li>
+          <li>在设置页主动导出或合并导入本地 JSON 备份文件。</li>
+        </ul>
+
+        <h3>服务边界</h3>
+        <ul>
+          <li>应用提供的是本地文本整理、规则化优化和评分参考工具，不承诺第三方 AI 平台的生成结果。</li>
+          <li>应用内评分和建议是启发式参考，不代表真实模型判断，也不保证你的 Prompt 在所有平台、模型或场景中都能获得预期结果。</li>
+          <li>模板变量填充属于本地文本替换工具，不会自动判断内容真实性、合法性、完整性或适用性。</li>
+          <li>当前版本不提供云同步、账号体系或跨设备自动同步服务。重要内容请及时导出备份。</li>
+        </ul>
+
+        <h3>用户行为规范</h3>
+        <ul>
+          <li>不得利用本应用从事违法违规活动，或规避第三方平台的安全、内容和使用规则。</li>
+          <li>不得使用本应用生成、保存、复制或传播侵犯他人知识产权、隐私权、名誉权、商业秘密等合法权益的内容。</li>
+          <li>不得输入、保存或传播涉及违法、欺诈、暴力、色情、仇恨、歧视、骚扰、恶意代码、非法交易或其他违反法律法规和公序良俗的内容。</li>
+          <li>你应自行确认 Prompt 内容在目标平台、目标模型和实际使用场景中的合法性、准确性、适用性和风险。</li>
+          <li>你应自行备份重要内容，并在导入备份前确认文件来源和内容可信。</li>
+        </ul>
+
+        <h3>数据和备份责任</h3>
+        <p>本应用以本地存储为主。因用户误操作、设备故障、系统清理、卸载应用、备份文件损坏、导入错误文件或第三方应用处理差异导致的数据丢失、重复、覆盖或使用异常，由用户自行确认、备份和处理。</p>
+        <p>当你将 Prompt 复制到其他应用或平台后，相关内容的后续处理、生成结果和平台规则由对应第三方应用或平台负责。请在使用前阅读并遵守目标平台的服务条款和隐私政策。</p>
+
+        <h3>免责声明</h3>
+        <ul>
+          <li>本应用不提供医疗、法律、金融、投资、心理咨询等高风险领域的专业建议。</li>
+          <li>本应用不对第三方 AI 工具、模型、平台或服务的可用性、输出质量、合规性或稳定性作保证。</li>
+          <li>因第三方平台规则变化、模型行为变化、账号限制、网络环境或用户自行编辑内容导致的使用差异，不属于本应用可控范围。</li>
+          <li>在法律允许范围内，开发者将尽力维护应用正常运行，但不承诺应用在所有设备、系统版本或使用环境中始终无错误或不中断。</li>
+        </ul>
+
+        <h3>协议变更</h3>
+        <p>如本协议发生更新，我们会通过应用内入口、版本说明或应用市场页面展示更新内容。你不同意更新内容时，可以停止使用本应用，并按需导出或删除本地数据。</p>
+      </article>
+    </section>
+
+    <section class="lang-panel" data-lang-panel="en" hidden>
+      <section class="hero" aria-labelledby="hero-title-en">
+        <h1 id="hero-title-en">PromptGPT Legal Center</h1>
+        <p class="lead">This page hosts the Privacy Policy and User Agreement for PromptGPT / GPT Prompt Assistant for in-app links, app store review, and user reference.</p>
+        <div class="quick-links" aria-label="Page navigation">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">User Agreement</a>
+          <a class="mail-link" href="mailto:tomkuku588@gmail.com">Contact: tomkuku588@gmail.com</a>
+        </div>
+      </section>
+
+      <section class="meta-grid" aria-label="Basic information">
+        <div class="meta-card">
+          <span>App name</span>
+          <strong>PromptGPT / GPT Prompt Assistant</strong>
+        </div>
+        <div class="meta-card">
+          <span>Version</span>
+          <strong>1.0.0</strong>
+        </div>
+        <div class="meta-card">
+          <span>Effective date</span>
+          <strong>2026-05-08</strong>
+        </div>
+      </section>
+
+      <article class="doc" data-section="privacy" aria-labelledby="privacy-title-en">
+        <h2 id="privacy-title-en">Privacy Policy for PromptGPT / GPT Prompt Assistant</h2>
+        <p class="notice">For privacy or agreement-related questions, please contact the developer at <a href="mailto:tomkuku588@gmail.com">tomkuku588@gmail.com</a>.</p>
+
+        <h3>Scope</h3>
+        <p>This Policy applies to the Prompt template management, local rule-based optimization, scoring references, history, favorites, workflows, one-tap copy, and local backup features provided by PromptGPT / GPT Prompt Assistant on HarmonyOS devices.</p>
+        <p>The app is primarily designed for local use. It does not require account registration or login, and it does not proactively upload Prompts, templates, categories, favorites, history, workflows, drafts, or settings entered by users. If later versions add accounts, online synchronization, analytics, third-party SDKs, online model capabilities, or new system permission scenarios, this Policy should be updated before those features go live and users should be informed in the app.</p>
+
+        <h3>Information We Process</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Information type</th>
+                <th>Processed</th>
+                <th>Purpose</th>
+                <th>Storage location</th>
+                <th>Retention period</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Account information</td>
+                <td>No</td>
+                <td>The current version does not provide an account system.</td>
+                <td>Not applicable</td>
+                <td>Not applicable</td>
+              </tr>
+              <tr>
+                <td>Device identifiers and analytics information</td>
+                <td>No</td>
+                <td>The current version does not collect device identifiers, advertising identifiers, or event analytics data.</td>
+                <td>Not applicable</td>
+                <td>Not applicable</td>
+              </tr>
+              <tr>
+                <td>Prompt and template content</td>
+                <td>Yes</td>
+                <td>Create, edit, optimize, score, save, and reuse Prompts.</td>
+                <td>Local storage on the user's device</td>
+                <td>Retained until the user deletes it, clears app data, or uninstalls the app.</td>
+              </tr>
+              <tr>
+                <td>Categories, favorites, and workflows</td>
+                <td>Yes</td>
+                <td>Support content organization, search, favorites, and multi-step reuse.</td>
+                <td>Local storage on the user's device</td>
+                <td>Retained until the user deletes it, clears app data, or uninstalls the app.</td>
+              </tr>
+              <tr>
+                <td>History and drafts</td>
+                <td>Yes</td>
+                <td>Support continued editing, review of prior results, and copying again.</td>
+                <td>Local storage on the user's device</td>
+                <td>Retained until the user clears it, clears app data, or uninstalls the app.</td>
+              </tr>
+              <tr>
+                <td>Template variable input</td>
+                <td>Depending on use</td>
+                <td>Replace template placeholders; after saving a draft or generating history, the input may be retained as part of the Prompt text.</td>
+                <td>Current editing session or local storage on the user's device</td>
+                <td>Only valid for the current session if not saved; after saving, retained according to local business data rules.</td>
+              </tr>
+              <tr>
+                <td>Backup file content</td>
+                <td>When triggered by the user</td>
+                <td>Export or merge-import local JSON backups.</td>
+                <td>File location selected by the user or app local storage</td>
+                <td>Managed by the user.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>System Capabilities and Permissions</h3>
+        <p>The core features of the app are completed locally on the device. The current version does not involve account login, online synchronization, location, contacts, camera, microphone, calendar, SMS, call records, or similar capabilities.</p>
+        <p>When you tap "one-tap copy", the app uses the system clipboard capability to write the Prompt content you actively selected to the device clipboard, so you can paste it into other apps. The app does not read clipboard content written by other apps and does not upload clipboard content.</p>
+        <p>When you actively export or import a backup, the app uses the system file selection or save capability. Exported JSON backup files are saved only to the location you choose. During import, the app reads only the backup file you actively selected and merges recognizable data into the current local data.</p>
+
+        <h3>Data Storage, Export, Import, and Deletion</h3>
+        <ul>
+          <li>Local storage: Prompts, templates, categories, favorites, history, workflows, scoring summaries, drafts, and settings are stored locally on the current device.</li>
+          <li>Data export: You can actively export a JSON backup file from the settings page. The export may include custom templates, categories, history, workflows, built-in template favorite status, and necessary settings.</li>
+          <li>Data import: You can actively select a backup file from the settings page and merge-import it. Import attempts to preserve existing data and may skip, merge, or rename duplicate or conflicting content.</li>
+          <li>Data deletion: You can clear history in the app or manage custom content on the relevant template, category, workflow, and other pages. You can also delete local data by clearing app data in system settings or uninstalling the app.</li>
+        </ul>
+
+        <h3>User Rights</h3>
+        <p>You can view, copy, edit, export, or delete locally saved content within the app. Because the current version mainly uses local storage, these operations need to be completed on your device.</p>
+
+        <h3>Third-Party Services and Information Sharing</h3>
+        <p>The current version does not integrate third-party SDKs, provide account login, deliver ads, perform analytics, or provide cloud synchronization services, and it does not proactively share Prompts, templates, history, or backup content entered by users with third parties.</p>
+        <p>After you copy a Prompt to another app or platform, the relevant content is subject to that third-party app or platform's terms of service and privacy policy. Please review and evaluate them before use.</p>
+
+        <h3>Protection of Minors</h3>
+        <p>The app is mainly intended for users who have independent needs for content creation, study, or work. Minors using the app should understand Prompt content, third-party platform rules, and personal information protection requirements under guardian guidance, and should avoid entering or spreading illegal, infringing, sensitive, or otherwise inappropriate content for public sharing.</p>
+
+        <h3>Policy Updates</h3>
+        <p>If this Policy is updated, we will display the updated content through in-app entry points, release notes, or app store pages. If an update involves a major change to how personal information is processed, it should be explained before the relevant feature is enabled.</p>
+      </article>
+
+      <article class="doc" data-section="terms" aria-labelledby="terms-title-en">
+        <h2 id="terms-title-en">User Agreement for PromptGPT / GPT Prompt Assistant</h2>
+        <p class="notice">For service or agreement-related questions, please contact the developer at <a href="mailto:tomkuku588@gmail.com">tomkuku588@gmail.com</a>.</p>
+
+        <h3>Service Content</h3>
+        <p>PromptGPT / GPT Prompt Assistant is intended for content creators, operations staff, product staff, developers, and other users who need to organize Prompts. It provides Prompt template management, local rule-based optimization, scoring references, history, favorites, search, workflows, one-tap copy, and local backup capabilities.</p>
+        <p>The main features you may use include:</p>
+        <ul>
+          <li>Browse and apply built-in Chinese Prompt templates.</li>
+          <li>Fill template variables and quickly replace placeholders such as <code>【Topic】</code> and <code>【Target audience】</code>.</li>
+          <li>Create, edit, categorize, search, and favorite Prompts.</li>
+          <li>Use local rules to optimize Prompts and view scores and improvement suggestions.</li>
+          <li>Save history and copy selected content to other apps or AI tools.</li>
+          <li>Create and reuse multi-step Prompt workflows.</li>
+          <li>Actively export or merge-import local JSON backup files from the settings page.</li>
+        </ul>
+
+        <h3>Service Boundaries</h3>
+        <ul>
+          <li>The app provides local text organization, rule-based optimization, and scoring reference tools. It does not promise generation results from third-party AI platforms.</li>
+          <li>Scores and suggestions in the app are heuristic references. They do not represent actual model judgment and do not guarantee that your Prompt will obtain expected results on all platforms, models, or scenarios.</li>
+          <li>Template variable filling is a local text replacement tool. It does not automatically determine the truthfulness, legality, completeness, or applicability of content.</li>
+          <li>The current version does not provide cloud synchronization, an account system, or automatic cross-device synchronization. Please export backups for important content in a timely manner.</li>
+        </ul>
+
+        <h3>User Conduct</h3>
+        <ul>
+          <li>You must not use the app for illegal activities or to circumvent the safety, content, or usage rules of third-party platforms.</li>
+          <li>You must not use the app to generate, save, copy, or spread content that infringes others' intellectual property rights, privacy rights, reputation rights, trade secrets, or other lawful rights and interests.</li>
+          <li>You must not enter, save, or spread content involving illegal acts, fraud, violence, pornography, hatred, discrimination, harassment, malicious code, illegal transactions, or other content that violates laws, regulations, public order, or good morals.</li>
+          <li>You are responsible for confirming the legality, accuracy, applicability, and risks of Prompt content on the target platform, target model, and actual use scenario.</li>
+          <li>You are responsible for backing up important content and confirming the source and trustworthiness of backup files before importing them.</li>
+        </ul>
+
+        <h3>Data and Backup Responsibility</h3>
+        <p>The app mainly uses local storage. Data loss, duplication, overwriting, or usage abnormalities caused by user error, device failure, system cleanup, app uninstallation, corrupted backup files, importing incorrect files, or differences in third-party app processing are the user's responsibility to confirm, back up, and handle.</p>
+        <p>After you copy a Prompt to another app or platform, subsequent processing of the content, generated results, and platform rules are the responsibility of the corresponding third-party app or platform. Please read and comply with the target platform's terms of service and privacy policy before use.</p>
+
+        <h3>Disclaimer</h3>
+        <ul>
+          <li>The app does not provide professional advice in high-risk fields such as medical, legal, financial, investment, or psychological counseling.</li>
+          <li>The app does not guarantee the availability, output quality, compliance, or stability of third-party AI tools, models, platforms, or services.</li>
+          <li>Usage differences caused by third-party platform rule changes, model behavior changes, account restrictions, network environments, or user-edited content are outside the app's controllable scope.</li>
+          <li>To the extent permitted by law, the developer will use reasonable efforts to maintain normal app operation, but does not promise that the app will always be error-free or uninterrupted on all devices, system versions, or usage environments.</li>
+        </ul>
+
+        <h3>Agreement Changes</h3>
+        <p>If this Agreement is updated, we will display the updated content through in-app entry points, release notes, or app store pages. If you do not agree with the updated content, you may stop using the app and export or delete local data as needed.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>PromptGPT / GPT提示词助手 · <a href="mailto:tomkuku588@gmail.com">tomkuku588@gmail.com</a></p>
+  </footer>
+
+  <script>
+    const languageButtons = document.querySelectorAll("[data-lang-button]");
+    const languagePanels = document.querySelectorAll("[data-lang-panel]");
+    const tagline = document.querySelector("[data-i18n='tagline']");
+
+    function getVisibleSection(sectionName) {
+      if (sectionName !== "privacy" && sectionName !== "terms") {
+        return null;
+      }
+
+      return document.querySelector(`[data-lang-panel]:not([hidden]) [data-section="${sectionName}"]`);
+    }
+
+    function scrollToVisibleSection(sectionName, behavior = "smooth") {
+      const section = getVisibleSection(sectionName);
+      if (!section) {
+        return;
+      }
+
+      requestAnimationFrame(() => {
+        section.scrollIntoView({ behavior, block: "start" });
+      });
+    }
+
+    function setLanguage(language) {
+      const isEnglish = language === "en";
+      document.documentElement.lang = isEnglish ? "en" : "zh-CN";
+      document.title = isEnglish ? "PromptGPT Legal Center" : "GPT提示词助手协议中心";
+      tagline.textContent = isEnglish ? "Privacy Policy and User Agreement" : "隐私政策与用户协议";
+
+      languageButtons.forEach((button) => {
+        const isActive = button.dataset.langButton === language;
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      languagePanels.forEach((panel) => {
+        panel.hidden = panel.dataset.langPanel !== language;
+      });
+
+      try {
+        localStorage.setItem("promptgpt-legal-language", language);
+      } catch (error) {
+        // Local storage can be unavailable in strict embedded browsers.
+      }
+
+      const hashSection = window.location.hash.slice(1);
+      if (hashSection) {
+        scrollToVisibleSection(hashSection, "auto");
+      }
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.langButton));
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const sectionName = link.getAttribute("href").slice(1);
+        const section = getVisibleSection(sectionName);
+        if (!section) {
+          return;
+        }
+
+        event.preventDefault();
+        history.pushState(null, "", `#${sectionName}`);
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    let initialLanguage = "zh";
+    try {
+      const savedLanguage = localStorage.getItem("promptgpt-legal-language");
+      if (savedLanguage === "en" || savedLanguage === "zh") {
+        initialLanguage = savedLanguage;
+      }
+    } catch (error) {
+      initialLanguage = "zh";
+    }
+
+    setLanguage(initialLanguage);
+  </script>
+</body>
+</html>
